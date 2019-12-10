@@ -1,10 +1,12 @@
+require 'bike'
+
 class DockingStation
   # def initialize
   #   # @bike = 1
   # end 
 
   def release_bike
-    :bike
+    Bike.new 
   end 
 end 
 
