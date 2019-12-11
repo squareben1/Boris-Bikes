@@ -10,8 +10,8 @@ class DockingStation
     Bike.new
   end
 
-  def dock(something)
-    
+  def dock(bike)
+
   end
 
 end
