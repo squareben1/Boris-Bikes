@@ -12,7 +12,7 @@ describe DockingStation do
   it {expect(DockingStation.new.release_bike).to respond_to(:working?)} 
 end 
   describe 'returns true' do
-  it {expect(DockingStation.new.release_bike.working?).to eq true} 
+  it {expect(DockingStation.new.release_bike).to be_working} 
 end 
 end
 
