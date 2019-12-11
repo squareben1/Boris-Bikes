@@ -16,8 +16,22 @@ describe DockingStation do
   end
   describe 'dock' do
     it {is_expected.to respond_to(:dock).with(1).argument }
+  end 
+  it 'docks something' do 
+    bike = Bike.new 
+    expect(subject.dock(bike)).to eq bike      
   end
-  it { is_expected.to }
+   
+  describe 'bike' do 
+    it { is_expected.to respond_to(:bike)}
+  end 
+  
+  it "something something" do
+    bike = Bike.new
+    subject.dock(bike)
+    expect(subject.bike).to eq bike
+  end
+ 
 
 end
 
