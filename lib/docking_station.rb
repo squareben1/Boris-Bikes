@@ -1,16 +1,22 @@
 require 'bike'
 
 class DockingStation
+
   # def initialize
   #   # @bike = 1
-  # end 
+  # end
 
   def release_bike
-    Bike.new 
-  end 
-end 
+    Bike.new
+  end
 
-# docking_station = DockingStation.new 
+  def dock(something)
+    
+  end
+
+end
+
+# docking_station = DockingStation.new
 # puts "docking station"
 # p docking_station
 
