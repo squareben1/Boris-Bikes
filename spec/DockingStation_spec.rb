@@ -19,7 +19,7 @@ describe DockingStation do
 
   describe '#dock' do 
     it 'has a capacity of 20 bikes' do 
-      DockingStation::DEFAULT_CAPACITY.times{subject.dock(Bike.new)}
+      subject.capacity.times{subject.dock(Bike.new)}
       expect{subject.dock(Bike.new)}.to raise_error "Error docking station full."
     end 
   end 
@@ -58,5 +58,20 @@ describe DockingStation do
     subject.dock(bike)
     expect(subject.bike_rack).to be_a(Array)
   end
-
 end
+
+  #   it "Should default to 20 if no argument given" do
+  #     expect{subject.initialize.with(0).argument}.to eq 20
+  #   end
+  # end
+
+  # # describe 'dock' do
+  # describe "#initialize" do
+  #   it ''
+
+
+  #   it {is_expected.to respond_to(:initialize).with(1).argument}
+  #   end
+  # end
+# end
+# end
