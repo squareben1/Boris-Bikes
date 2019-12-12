@@ -2,7 +2,6 @@ require 'docking_station'
 require 'bike'
 
 describe DockingStation do
-  # updating release bike method
   # using the below hash to imply that it is an instance method
   describe '#release_bike' do
     it 'releases an error when there are no bikes' do
@@ -10,13 +9,21 @@ describe DockingStation do
     end
   end
 
+  # describe '#dock' do 
+  #   it "raises an error when docking station full" do 
+  #     bike = Bike.new
+  #     subject.dock(bike)
+  #     expect{ subject.dock(Bike.new)}.to raise_error "Error docking station full."
+  #   end 
+  # end 
+
   describe '#dock' do 
-    it "raises an error when docking station full" do 
-      bike = Bike.new
-      subject.dock(bike)
-      expect{ subject.dock(Bike.new)}.to raise_error "Error docking station full."
+    it 'has a capacity of 20 bikes' do 
+      20.times{subject.dock(Bike.new)}
+      expect{subject.dock(Bike.new)}.to raise_error "Error docking station full."
     end 
   end 
+
 
   describe '#release_bike' do
     it 'releases a bike' do
@@ -39,41 +46,16 @@ describe DockingStation do
 
   it 'docks something' do
     bike = Bike.new
-    expect(subject.dock(bike)).to eq bike
-  end
+    expect(subject.dock(bike)).to be_a(Array)
+    end
 
   describe 'bike' do
-    it { is_expected.to respond_to(:bike)}
+    it { is_expected.to respond_to(:bike_rack)}
   end
 
-  it "something something" do
+  it "counts docked bikes" do
     bike = Bike.new
     subject.dock(bike)
-    expect(subject.bike).to eq bike
+    expect(subject.bike_rack).to be_a(Array)
   end
 end
-#   it "wants to raise an error" do
-#     expect{ subject.release_bike }.to raise_error "Error. No Bike."
-#   end
-# end
-
-# describe DockingStation do
-#   describe 'releases a bike' do
-#   it {expect(:release_bike).to eq Bike}
-# end
-# end
-
-# Your test should check that you can call working? on the result of DockingStation.release_bike,
-# and that the result of doing so is true.
-
-# describe 'fizzbuzz' do
-#   it 'returns "FizzBuzz" when passed 15' do
-#     expect(DockingStation)).to eq 0
-#   end
-# end
-#   it 'returns "Fizz" when passed 3' do
-#     expect(fizzbuzz(3)).to eq 'Fizz'
-#   end
-#   it 'returns "Buzz" when passed 5' do
-#     expect(fizzbuzz(5)).to eq 'Buzz'
-#   end
