@@ -10,6 +10,14 @@ describe DockingStation do
     end
   end
 
+  describe '#dock' do 
+    it "raises an error when docking station full" do 
+      bike = Bike.new
+      subject.dock(bike)
+      expect{ subject.dock(Bike.new)}.to raise_error "Error docking station full."
+    end 
+  end 
+
   describe '#release_bike' do
     it 'releases a bike' do
       bike = Bike.new
@@ -18,39 +26,12 @@ describe DockingStation do
       expect(subject.release_bike).to eq bike
     end
   end
-  # describe 'responds to release_bike' do
-  #   it {expect(DockingStation.new).to respond_to(:release_bike)}
-  # end
-
-# --- Bellow comment out was throwing error ----
-
-  # describe 'responds to working' do
-  #   it {expect(DockingStation.new.release_bike).to respond_to(:working?)}
-  # end
-
-  # As released bike method was updated this also needed to be updated
-
-# ----------------------------------------------
 
   it 'responds to working' do
     bike = Bike.new
     expect(bike).to be_working
   end
 
-# ---- Bellow comment out was throwing error ----
-
-  # describe 'returns true' do
-  #   it {expect(DockingStation.new.release_bike).to be_working}
-  # end
-
-# We only want to give extra describes if it is an instance of a method
-
-# -----------------------------------------------
-
-  # it 'returns true' do
-  #   result = subject.release_bike
-  #   expect(result).to be_working
-  # end
 
   describe 'dock' do
     it {is_expected.to respond_to(:dock).with(1).argument }

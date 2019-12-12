@@ -1,4 +1,4 @@
- require 'bike'
+#  require 'bike'
 
 class DockingStation
 
@@ -10,11 +10,8 @@ class DockingStation
   end
 
   def dock(bike)
+    fail "Error docking station full." if @bike 
     @bike = bike
-  end
-
-  def bike
-    @bike
   end
 
 end
