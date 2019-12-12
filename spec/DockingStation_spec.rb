@@ -2,16 +2,6 @@ require 'docking_station'
 require 'bike'
 
 describe DockingStation do
-<<<<<<< HEAD
-  describe 'responds to release_bike' do
-    it {expect(subject).to respond_to(:release_bike)}
-  end
-  describe 'responds to wokring' do
-    it {expect(subject.release_bike).to respond_to(:working?)}
-  end
-  describe 'returns true' do
-    it {expect(subject.release_bike).to be_working}
-=======
   # updating release bike method
   # using the below hash to imply that it is an instance method
   describe '#release_bike' do
@@ -45,7 +35,6 @@ describe DockingStation do
   it 'responds to working' do
     bike = Bike.new
     expect(bike).to be_working
->>>>>>> 7426d3ec61d99f057a52b101f5f14e3c862679e5
   end
 
 # ---- Bellow comment out was throwing error ----
@@ -66,11 +55,7 @@ describe DockingStation do
   describe 'dock' do
     it {is_expected.to respond_to(:dock).with(1).argument }
   end
-<<<<<<< HEAD
-  describe 'bike' do 
-    it { is_expected.to respond_to(:bike)}
-  end 
-=======
+
   it 'docks something' do
     bike = Bike.new
     expect(subject.dock(bike)).to eq bike
@@ -80,7 +65,6 @@ describe DockingStation do
     it { is_expected.to respond_to(:bike)}
   end
 
->>>>>>> 7426d3ec61d99f057a52b101f5f14e3c862679e5
   it "something something" do
     bike = Bike.new
     subject.dock(bike)
